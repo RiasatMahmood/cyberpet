@@ -10,8 +10,79 @@ const feed = document.getElementById("feed");
 const play = document.getElementById("play");
 const givedrink = document.getElementById("drink");
 const clean = document.getElementById("clean");
-const left = document.getElementById("left");
-const right = document.getElementById("right");
+// const left = document.getElementById("left");
+// const right = document.getElementById("right");
+const image = document.getElementById("caty");
+const choName = document.querySelector(".choName");
+const select = document.querySelector("#petType");
+const but = document.getElementById("submit");
+const input = document.getElementById("input")
+const header = document.getElementById("headi")
+
+
+let mate = ""
+
+but.addEventListener("click", ()=>{
+    
+    if(select.value === "Cat"){
+    //  image.src = "./catNor.gif";
+    mate = Cat
+}
+    
+ 
+ });
+ 
+ but.addEventListener("click", ()=>{
+     
+     if(select.value === "Dog"){
+     
+    //    image.src = "./dogNor.gif"
+       mate = Dog
+    }
+    
+  });
+ 
+  but.addEventListener("click", ()=>{
+     
+     if(select.value == "Rabbit"){
+     mate = Rabbit
+    //   image.src = "./rabbitNor.gif"}
+     }
+  });
+ 
+  but.addEventListener("click", ()=>{
+     
+     if(select.value == "Monkey"){
+     mate = Monkey
+    //   image.src = "./monkeyNor.gif"}
+     }
+  });
+ 
+  but.addEventListener("click", ()=>{
+     
+     if(select.value == "Donkey"){
+     mate = Donkey
+    //   image.src = "./dunkeyNor.gif"}
+     }
+      
+  });
+
+
+  but.addEventListener("click",()=>{
+    if(select.value == "Cat1"){
+        mate = Cat1
+    }
+})
+ 
+  but.addEventListener("click",()=>{
+    if(input.value!=="")
+    header.textContent=`Your ${select.value} name is: ${input.value}`
+
+})
+
+
+
+ 
 
 
 class Pet {
@@ -25,89 +96,105 @@ class Pet {
         this.thirst =thirst;
         this.health =health;
     }
-    get petinfo(){
-        return `${this.happiness},${this.cleanliness},${this.hunger},${this.thirst},${this.health}`
-     }
+    // get petinfo(){
+    //     return `${this.happiness},${this.cleanliness},${this.hunger},${this.thirst},${this.health}`
+    //  }
 }
 
 
-const Cybercat = new Pet(10, 20, 30, 40, 50)
-const Cyberdog= new Pet(60,70,80,90,100)
-console.log(Cybercat)
-console.log(Cybercat.Pet.petinfo)
+//subclass
+class PetInfo extends Pet {
+    constructor(name, type, happiness, cleanliness, hunger, thirst, health){
+        super(happiness, cleanliness, hunger, thirst, health);
+        this.name = name;
+        this.type = type;
+    }
+}
+
+
+
+const Cat = new Pet(50,50,50,50,75);
+const Dog = new Pet(50,50,50,50,50);
+const Rabbit = new Pet(50,50,50,50,80);
+const Monkey = new Pet(50,50,50,50,50);
+const Donkey = new Pet(50,50,50,50,50);
+// subclass
+const Cat1 = new PetInfo("Cat1", "cybercat",100 , 100, 100, 100, 100)
+// console.log(Cybercat.Pet.petinfo)
+
 
 
 
 function feedPet() {
     // con
-    this.hunger -= 10;
-    this.cleanliness -= 5;
-    this.happiness -= 5;
+    mate.hunger -= 10;
+    mate.cleanliness -= 5;
+    mate.happiness -= 5;
     // pro
-    this.thirst += 5;
-    this.health -= 5;
+    mate.thirst += 5;
+    mate.health -= 5;
 }
 
 function giveDrink() {
     // con
-    this.hunger -= 10;
-    this.cleanliness -= 10;
-    this.thirst -= 10;
+    mate.hunger -= 10;
+    mate.cleanliness -= 10;
+    mate.thirst -= 10;
     // pro
-    this.happiness += 5;
-    this.health += 10;
+    mate.happiness += 5;
+    mate.health += 10;
 }
 
 function playwithpet() {
     // con
-    this.happiness +=10;
-    this.health += 10;
-    this.hunger += 5;
-    this.thirst += 5;
+    mate.happiness +=10;
+    mate.health += 10;
+    mate.hunger += 5;
+    mate.thirst += 5;
 }
 
 function cleanPet() {
     // con
-    this.health += 10;
-    this.hunger += 5;
-    this.cleanliness += 5;
+    mate.health += 10;
+    mate.hunger += 5;
+    mate.cleanliness += 5;
     // pro
-    this.happiness -= 5;
+    mate.happiness -= 5;
 };
 
 
 
 
 function checkCondition() {
-    if (Pet.health >= 100){
-        Pet.health = 100;
+    if (mate.health >= 100){
+        mate.health = 100;
     } 
-    if (Pet.health <= 0){
-        Pet.health = 0;
+    if (mate.health <= 0){
+        mate.health = 0;
     }
-    if (Pet.hunger <= 0){
-        Pet.hunger = 0;
+    if (mate.hunger <= 0){
+        mate.hunger = 0;
     } 
-    if (Pet.hunger >= 100){
-        Pet.hunger = 100;
+    if (mate.hunger >= 100){
+        mate.hunger = 100;
     } 
-    if (Pet.thirst >= 100){
-        Pet.thirst = 100;
+    if (mate.thirst >= 100){
+        mate.thirst = 100;
     } 
-    if (Pet.thirst <= 0){
-        Pet.thirst = 0;
+    if (mate.thirst <= 0){
+        mate.thirst = 0;
     } 
-    if (Pet.happiness >= 100){
-        Pet.happiness = 100;
+    if (mate.happiness >= 100){
+        mate.happiness = 100;
     } 
-    if (Pet.happiness <= 0){
-        Pet.happiness = 0;
+    if (mate.happiness <= 0){
+        mate.happiness = 0;
     } 
-    if (Pet.cleanliness <= 0){
-        Pet.cleanliness = 0;
+    if (mate.cleanliness <= 0){
+        mate.cleanliness = 0;
     } 
-    if (Pet.cleanliness >= 100){
-        Pet.cleanliness =100;
+    if (mate.cleanliness >= 100){
+        mate.cleanliness =100;
     };
 
 }    
@@ -117,32 +204,32 @@ function renderData() {
 // Pet.petinfo.cybercat()
 // }
 
-        health.textContent = `health: ${Pet.health}`;
-        thirst.textContent = `thirst: ${Pet.thirst}`;
-        hunger.textContent = `hunger: ${Pet.hunger}`;
-        happiness.textContent = `happiness: ${Pet.happiness}`;
-        cleanliness.textContent = `cleanliness: ${Pet.cleanliness}`;
+        health.textContent = `health: ${mate.health}`;
+        thirst.textContent = `thirst: ${mate.thirst}`;
+        hunger.textContent = `hunger: ${mate.hunger}`;
+        happiness.textContent = `happiness: ${mate.happiness}`;
+        cleanliness.textContent = `cleanliness: ${mate.cleanliness}`;
     }
 
 feed.addEventListener("click", () => {
-    Pet.feedPet();
+    this.feedPet();
     checkCondition();
     renderData();
 });
 
 givedrink.addEventListener("click", () => {
-    Pet.giveDrink();
+    this.giveDrink();
     checkCondition();
     renderData();
 });
 play.addEventListener("click", () => {
-    Pet.playwithpet();
+    this.playwithpet();
     checkCondition();
     renderData();
 });
 
 clean.addEventListener("click", () => {
-    Pet.cleanPet();
+    this.cleanPet();
     checkCondition();
     renderData();
 });
@@ -154,11 +241,11 @@ renderData()
 
 const timingFunction = () => {
     window.setTimeout(() => {
-        Pet.hunger -= 2;
-        Pet.thirst -= 2;
-        Pet.happiness -= 2;
-        Pet.cleanliness -= 2;
-        Pet.health -= 2;
+        mate.hunger -= 2;
+        mate.thirst -= 2;
+        mate.happiness -= 2;
+        mate.cleanliness -= 2;
+        mate.health -= 2;
         
         checkCondition()
         renderData();

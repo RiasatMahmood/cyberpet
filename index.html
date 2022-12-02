@@ -9,7 +9,7 @@
 </head>
 <body>
     <main>
-        <h1>Cyberpet</h1>
+        <h1 id="headi">CyberPet</h1>
 <!-- 
     <p id="health">health</p>  
     <p id="hunger">hunger</p>
@@ -32,17 +32,29 @@
         <img src="cat1.jpg"alt="cat pic">
 
         
-            <div id="choosepet">
+            <!-- <div id="choosepet">
                 <p>Choose your pet</p>
-            </div>
+            </div> -->
         <!-- left and right button -->
 
         <!-- on click events for the buttons -->
         <div id="diffpet">
-            <button id="left">left</button>
-            <button id="right">right</button>
+            <div>
+                <select  id= "petType" name="ref">
+                 <option value="">(select one)</option>
+                 <option value="Cat">Cat</option>
+                 <option value="Dog">Dog</option>
+                 <option value="Rabbit">Rabbit</option>
+                 <option value="Monkey">Monkey</option>
+                 <option value="Donkey">Donkey</option>
+                 <option value="Cat1">CyberCat</option>
+             </div>
         </div>
-    
+        <div class="input">
+            <input id="input" type="text" placeholder="Write Your Pet Name...">
+            <hr>
+            <button id="submit">START</button>
+        </div>
     </div>
 <!-- /////second image which you can cycle through -->
 
