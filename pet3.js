@@ -4,6 +4,8 @@ const thirst = document.getElementById("thirst");
 const hunger = document.getElementById("hunger");
 const happiness = document.getElementById("happiness");
 const cleanliness = document.getElementById("cleanliness");
+const name = document.getElementById("name");
+const type = document.getElementById("type")
 
 //buttons
 const feed = document.getElementById("feed");
@@ -12,74 +14,162 @@ const givedrink = document.getElementById("drink");
 const clean = document.getElementById("clean");
 // const left = document.getElementById("left");
 // const right = document.getElementById("right");
-const image = document.getElementById("caty");
-const choName = document.querySelector(".choName");
-const select = document.querySelector("#petType");
-const but = document.getElementById("submit");
+const image = document.getElementById("pics");
+// const choName = document.querySelector(".choName");
+const select = document.getElementById("petType");
+const start = document.getElementById("submit");
 const input = document.getElementById("input")
-const header = document.getElementById("headi")
+const hi = document.getElementById("hi")
 
 
 let mate = ""
 
-but.addEventListener("click", ()=>{
+start.addEventListener("click", ()=>{
     
     if(select.value === "Cat"){
-    //  image.src = "./catNor.gif";
     mate = Cat
-}
-    
- 
- });
- 
- but.addEventListener("click", ()=>{
-     
-     if(select.value === "Dog"){
-     
-    //    image.src = "./dogNor.gif"
-       mate = Dog
+    image.src = "images/cat1.jpg";
+    // start.textContent="Reset"   
+    //start.remove()
     }
     
-  });
- 
-  but.addEventListener("click", ()=>{
+    else if(select.value === "Dog"){
      
-     if(select.value == "Rabbit"){
-     mate = Rabbit
-    //   image.src = "./rabbitNor.gif"}
-     }
-  });
- 
-  but.addEventListener("click", ()=>{
-     
-     if(select.value == "Monkey"){
-     mate = Monkey
-    //   image.src = "./monkeyNor.gif"}
-     }
-  });
- 
-  but.addEventListener("click", ()=>{
-     
-     if(select.value == "Donkey"){
-     mate = Donkey
-    //   image.src = "./dunkeyNor.gif"}
-     }
-      
-  });
-
-
-  but.addEventListener("click",()=>{
-    if(select.value == "Cat1"){
-        mate = Cat1
+        image.src = "/cyberpet2/dog.webp"
+          mate = Dog
+        //   start.textContent="Reset"   
+          //start.remove()
     }
-})
+
+    else{ if(select.value == "Cybercat"){
+            mate = Cybercat
+            image.src = "/cyberpet2/cybercat.webp"
+            // start.textContent="Reset"   
+            //start.remove()
+        }}
+        if(select.value === "Cat" || select.value === "Dog" || select.value == "Cybercat");
+
+    //     if (start.textContent="Reset")
+    // }else {
+
+    //     }
  
-  but.addEventListener("click",()=>{
+});
+
+// start.addEventListener("click", start);
+    
+//     function start(){
+//     if(select.value === "Cat"){
+//     mate = Cat
+//     image.src = "images/cat1.jpg";
+//     // start.textContent="Reset"   
+//     //start.remove()
+//     }
+    
+//     else if(select.value === "Dog"){
+     
+//         image.src = "/cyberpet2/dog.webp"
+//           mate = Dog
+//         //   start.textContent="Reset"   
+//           //start.remove()
+//     }
+
+//     else{ if(select.value == "Cybercat"){
+//             mate = Cybercat
+//             image.src = "/cyberpet2/cybercat.webp"
+//             // start.textContent="Reset"   
+//             //start.remove()
+//         }}
+//         if(select.value === "Cat" || select.value === "Dog" || select.value == "Cybercat" )
+
+//         start.removeEventListener("click", start);
+//         start.addEventListener("click", reset);
+//         start.value="Reset";
+//     }
+
+//     function reset(){
+//         // console.log("Stopped");
+//         start.removeEventListener("click", reset);
+//         start.addEventListener("click", start);
+//         start.value = "Start";
+//     }
+
+
+// start.addEventListener("click", ()=>{
+//     start.textContent==="Reset" 
+//     reset()
+//     renderData();
+// })
+
+ start.addEventListener("click",()=>{
     if(input.value!=="")
-    header.textContent=`Your ${select.value} name is: ${input.value}`
+    hi.textContent=`Hi I am a ${select.value} and my name is ${input.value}`
 
 })
 
+// start.addEventListener("click", () => {
+//      (style.display == "none")}
+//         // list.style.display = "block";
+//         // showButton.textContent = "hide";
+
+
+//  but.addEventListener("click", ()=>{
+     
+//      if(select.value === "Dog"){
+     
+//      image.src = "/cyberpet2/dog.webp"
+//        mate = Dog
+//     }
+    
+//   });
+ 
+//   but.addEventListener("click", ()=>{
+     
+//      if(select.value == "Rabbit"){
+//      mate = Rabbit
+//       image.src = "fox.jpeg"
+//      }
+//   });
+ 
+//   but.addEventListener("click", ()=>{
+     
+//      if(select.value == "Monkey"){
+//      mate = Monkey
+//     //   image.src = "./monkeyNor.gif"}
+//      }
+//   });
+ 
+//   but.addEventListener("click", ()=>{
+     
+//      if(select.value == "Donkey"){
+//      mate = Donkey
+//     //   image.src = "./dunkeyNor.gif"}
+//      }
+      
+//   });
+
+
+//   but.addEventListener("click",()=>{
+//     if(select.value == "Cybercat"){
+//         mate = Cybercat
+//         image.src = "/cyberpet2/cybercat.webp"
+//     }
+// })
+
+
+
+ 
+//   but.addEventListener("click",()=>{
+//     if(input.value!=="")
+//     hi.textContent=`Hi i am a ${select.value} and my name is ${input.value}`
+
+// })
+
+
+
+// start.addEventListener('click', () => {
+//   start.remove();
+// });
 
 
  
@@ -96,7 +186,7 @@ class Pet {
         this.thirst =thirst;
         this.health =health;
     }
-    // get petinfo(){
+    // get petdetails(){
     //     return `${this.happiness},${this.cleanliness},${this.hunger},${this.thirst},${this.health}`
     //  }
 }
@@ -104,7 +194,7 @@ class Pet {
 
 //subclass
 class PetInfo extends Pet {
-    constructor(name, type, happiness, cleanliness, hunger, thirst, health){
+    constructor(happiness, cleanliness, hunger, thirst, health, name, type){
         super(happiness, cleanliness, hunger, thirst, health);
         this.name = name;
         this.type = type;
@@ -115,42 +205,46 @@ class PetInfo extends Pet {
 
 const Cat = new Pet(50,50,50,50,75);
 const Dog = new Pet(50,50,50,50,50);
-const Rabbit = new Pet(50,50,50,50,80);
-const Monkey = new Pet(50,50,50,50,50);
-const Donkey = new Pet(50,50,50,50,50);
+// const Rabbit = new Pet(50,50,50,50,80);
+// const Monkey = new Pet(50,50,50,50,50);
+// const Donkey = new Pet(50,50,50,50,50);
 // subclass
-const Cat1 = new PetInfo("Cat1", "cybercat",100 , 100, 100, 100, 100)
+const Cybercat = new PetInfo(100, 100, 100, 100, 100,"Cat", "Type: Cybercat")
 // console.log(Cybercat.Pet.petinfo)
 
-
+if (mate.health = 0){
+    window.HTML = "game over massage"
+}
 
 
 function feedPet() {
     // con
-    mate.hunger -= 10;
     mate.cleanliness -= 5;
-    mate.happiness -= 5;
-    // pro
-    mate.thirst += 5;
-    mate.health -= 5;
+    mate.thirst += 5
+    //pos
+    mate.happiness += 3;
+    mate.health += 5;
+    mate.hunger -= 10;
 }
 
 function giveDrink() {
     // con
-    mate.hunger -= 10;
-    mate.cleanliness -= 10;
+    mate.hunger += 2;
+    mate.cleanliness -= 5;
     mate.thirst -= 10;
-    // pro
+    // pos
     mate.happiness += 5;
-    mate.health += 10;
+    mate.health += 5;
 }
 
 function playwithpet() {
-    // con
-    mate.happiness +=10;
-    mate.health += 10;
+    //con
     mate.hunger += 5;
     mate.thirst += 5;
+    mate.cleanliness -+10
+    //pos
+    mate.happiness +=10;
+    mate.health += 10;
 }
 
 function cleanPet() {
@@ -158,9 +252,17 @@ function cleanPet() {
     mate.health += 10;
     mate.hunger += 5;
     mate.cleanliness += 5;
-    // pro
+    // pos
     mate.happiness -= 5;
 };
+
+function reset(){
+    this.happiness = happiness;
+    this.cleanliness = cleanliness;
+    this.hunger =hunger;
+    this.thirst =thirst;
+    this.health =health;
+}
 
 
 
@@ -203,12 +305,14 @@ function renderData() {
 //     Pet.petinfo()
 // Pet.petinfo.cybercat()
 // }
+        name.textContent = `${input.value}: Stats`;
+        type.textContent = `${mate.type}`;
 
-        health.textContent = `health: ${mate.health}`;
-        thirst.textContent = `thirst: ${mate.thirst}`;
-        hunger.textContent = `hunger: ${mate.hunger}`;
-        happiness.textContent = `happiness: ${mate.happiness}`;
-        cleanliness.textContent = `cleanliness: ${mate.cleanliness}`;
+        health.textContent = `Health: ${mate.health}`;
+        thirst.textContent = `Thirst: ${mate.thirst}`;
+        hunger.textContent = `Hunger: ${mate.hunger}`;
+        happiness.textContent = `Happiness: ${mate.happiness}`;
+        cleanliness.textContent = `Cleanliness: ${mate.cleanliness}`;
     }
 
 feed.addEventListener("click", () => {
@@ -241,11 +345,11 @@ renderData()
 
 const timingFunction = () => {
     window.setTimeout(() => {
-        mate.hunger -= 2;
-        mate.thirst -= 2;
+        mate.hunger += 2;
+        mate.thirst += 2;
         mate.happiness -= 2;
-        mate.cleanliness -= 2;
-        mate.health -= 2;
+        mate.cleanliness += 2;
+        mate.health -= 5;
         
         checkCondition()
         renderData();
@@ -255,11 +359,29 @@ const timingFunction = () => {
 }
 timingFunction();
 
+
+const healthCheck = () => {
+    window.setTimeout(() => {
+        if(mate.hunger >85)
+        mate.health -= 5;
+        
+        checkCondition()
+        renderData();
+        healthCheck();
+        
+    }, 10000);
+}
+healthCheck();
+
+
+
+
  const randomgift=() => {
     window.setTimeout(() => {
         let num1 = Math.ceil(Math.random()*100)
         if (num1 == 20){
             Pet.health =0;
+
         }
 
             renderData();
@@ -268,4 +390,4 @@ timingFunction();
     },1000)
  }
 
- randomgift()
+ randomgift();

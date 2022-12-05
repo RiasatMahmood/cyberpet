@@ -167,6 +167,10 @@ img{
 
 
 /* main{
+    
+
+
+
     width: 80%;
     height: 90%;
     margin: 0 auto;
@@ -330,3 +334,91 @@ p{
     font-size: 100%;
     flex-direction: column;
 } */
+
+
+#heading{
+    display: flex;
+    justify-content: center;
+    color: goldenrod;
+    font-size: 400%;
+    border: 1px solid red;
+}
+
+#hi{
+    display: flex;
+    justify-content: start;
+    font-size: 200%;
+}
+
+#hi1 {
+    border: 1px solid red;
+}
+
+#main {
+    border: 1px solid red;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: -4%;
+}
+
+#render{
+    z-index: 1;
+    border: 1px solid red;
+    width: 20%;
+    height: 30%;
+    /* display: flex;
+    flex-direction: column;
+    align-items: center; */
+}
+
+#pics {
+    border: 1px solid red;
+    width: 25%;
+}
+    /* display: flex;
+    justify-content: flex-end;
+} */
+
+#diffpet {
+    display: flex;
+    justify-content: center;
+    border: 1px solid red;
+    height: 2000%;
+}
+#petType{
+    height: 100px;
+    width: 300px;
+    font-size: 150%;
+}
+#input{
+    font-size: 150%;
+
+}
+#submit{
+   width: 675px ;
+   height: 75px;
+   font-size: 200%;
+}
+
+#submitbutton {
+    display: flex;
+    justify-content: center;
+    border: 1px solid red;
+}
+
+#playbuttons {
+    border: 1px solid red;
+    display: flex;
+    justify-content: space-evenly;
+    height: 100px;
+    font-size: 100px;
+
+}   
+
+#feed, #play, #clean, #drink {
+    font-size: 50%;
+    color: goldenrod;
+    width: 15%;
+}
